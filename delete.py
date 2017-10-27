@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def clean_json(stringname):
+def clean_cards(stringname):
     """
 
     :rtype: file_name
@@ -27,6 +27,17 @@ def clean_json(stringname):
         for x in range(len(element['variations'])):
             if 'href' in element['variations'][x]['rarity']:
                 del element['variations'][x]['rarity']['href']
+    with open(stringname, 'w') as file:
+        file.write(json.dumps(data))
+
+def clean_variations(stringname):
+    with open(stringname) as data_file:
+        data =json.load(data_file)
+    for element in data:
+        if 'href' in element['rarity']:
+            del element['rarity']['href']
+        if ('href') in element:
+            del element['href']
     with open(stringname, 'w') as file:
         file.write(json.dumps(data))
 
