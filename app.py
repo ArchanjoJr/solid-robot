@@ -2,7 +2,16 @@ import requests as re
 from delete import *
 import pprint
 import json
+import sys
 
+lista = [ 'en-US', 'de-DE', 'es-ES', 'es-MX', 'fr-FR', 'it-IT', 'ja-JP', 'pl-PL', 'pt-BR', 'ru-RU']
+lang=0
+if len(sys.argv)>0:
+    if sys.argv[1] in lista:
+        lang=lista.index(sys.argv[1])
+print(lista[lang])
+
+'''
 url = 'https://api.gwentapi.com/v0/cards'
 print('Getting the Amount of Cards of Database')
 pag = re.get(url)
@@ -59,3 +68,4 @@ clean_cards('cards.json')
 clean_variations('variations.json')
 delete('aux.json')
 print('Done!')
+'''
