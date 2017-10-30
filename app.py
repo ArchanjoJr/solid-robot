@@ -4,12 +4,12 @@ import pprint
 import json
 import sys
 
-lista = [ 'en-US', 'de-DE', 'es-ES', 'es-MX', 'fr-FR', 'it-IT', 'ja-JP', 'pl-PL', 'pt-BR', 'ru-RU']
+list = [ 'en-US', 'de-DE', 'es-ES', 'es-MX', 'fr-FR', 'it-IT', 'ja-JP', 'pl-PL', 'pt-BR', 'ru-RU']
 lang=0
 if len(sys.argv)>0:
-    if sys.argv[1] in lista:
-        lang=lista.index(sys.argv[1])
-print(lista[lang])
+    if sys.argv[1] in list:
+        lang=list.index(sys.argv[1])
+print("Getting a JSON for the "+ list[lang]+" language")
 
 '''
 url = 'https://api.gwentapi.com/v0/cards'
@@ -20,7 +20,7 @@ if pag.status_code != 200:
 else:
     limit = pag.json()['count']
 
-url += "?limit=" + str(limit)
+url += "?limit=" + str(limit)+'&lang='+list[lang]
 
 
 pag = re.get(url)
@@ -30,7 +30,6 @@ else:
     with open('aux.json','w') as arquivo:
         arquivo.write(json.dumps(pag.json()["results"]))
 
-# FAZENDO TESTE PARA OS PRIMEIROS 20 CASOS
 test = limit
 aux = json.load(open('aux.json', 'r'))
 file = open('cards.json', 'w')
