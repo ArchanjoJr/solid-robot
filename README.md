@@ -27,7 +27,8 @@ Just follow these easy step to step guide to Download the latest script:
 
 4. Then Install the Dependencies:
 	`pip3 install -r requirements.txt`
-####After That You're Good to Go
+	
+#### After That You're Good to Go
 
 ## Usage
 Example:
@@ -53,7 +54,7 @@ Expression    | Languange
 ### Example: `python3 app.py pl-PL`
 
 ## NOTES:
->This script will create 2 JSON_(JAVASCRIPT OBJECT NOTATION)_ files on the folder
+>This script will create 2 JSON _(JAVASCRIPT OBJECT NOTATION)_ files on the folder
 
 >1. CARDS.JSON: contaning all the cards and it basic informations like color, Faction, quotes
 
