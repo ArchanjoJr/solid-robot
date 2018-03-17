@@ -1,4 +1,5 @@
-# Solid Robot
+# ~~Solid Robot~~(DEPRECATED)
+## Working on a new Version
 
 A Simple Terminal Wrapper script for the [GwentApi](https://gwentapi.com/) to extract  a local **JSON**.
 
